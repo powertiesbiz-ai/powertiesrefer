@@ -16,13 +16,6 @@ const CATALOG: Array<[string, string, string]> = [
   ["VetsAndMore membership", "$3/month", "$0.30 per month"],
 ];
 
-const SPLITS: Array<[string, string, string, string, string]> = [
-  ["Any course", "$49", "$4.90", "$7.35", "$2.45"],
-  ["One-hour AI session", "$99", "$9.90", "$14.85", "$4.95"],
-  ["Stage 2 program", "$650", "$65.00", "$97.50", "$32.50"],
-  ["VetsAndMore membership", "$3/month", "$0.30", "$0.45", "$0.15"],
-];
-
 const RULES: string[] = [
   "One tier only. You earn on your own referrals. You never earn on people you sign up, and signing people up earns nothing. There is no second level, and there never will be.",
   "Commission is paid only on completed sales that are not refunded, after the 30-day vesting window. Vested commissions are sent on the 1st of the following month, by Cash App, to the $cashtag you gave at sign-up, and Cash App payments normally arrive the same day they are sent. There is nothing to claim and no withdrawal to request: payouts are pushed, never pulled.",
@@ -103,9 +96,9 @@ export default function Home() {
           <p className="text-base font-semibold leading-relaxed">{HONESTY}</p>
         </div>
         <p className="mt-4 text-muted">
-          Where does the money come from? PowerTies sets aside 15% of every referred sale. Your 10% commission is paid
-          out of that set-aside, and what is left goes into PowerTies savings. If no sale happens, no money exists, and
-          nothing is owed. The full math is on this page, in the open.
+          Where does the money come from? Money for the commission is set aside after every sale is complete. If no
+          sale happens, no money exists, and nothing is owed. What you earn on each item is listed on this page, in
+          the open.
         </p>
       </header>
 
@@ -161,44 +154,9 @@ export default function Home() {
 
       <Section title="The money, explained">
         <p className="text-muted">
-          On every referred sale, PowerTies sets aside 15% of the sale. Referrers are paid their 10% out of that
-          set-aside. The other 5% moves into PowerTies savings on the same day payouts go out. Because the set-aside
-          and the commissions are measured on the same sales, the set-aside always covers the payouts, with 5 points
-          to spare.
+          Money for the commission is set aside after every sale is complete. If no sale happens, no money exists,
+          and nothing is owed.
         </p>
-        <div className="mt-4 rounded-xl border border-line bg-card p-4">
-          <div className="font-bold">A worked example month</div>
-          <p className="mt-1 text-muted">
-            Say total sales for the month are $2,000, and $800 of that came through referral links. The set-aside is
-            15% of the referred sales: $120. Referrers are paid 10% of the referred sales: $80. The remaining $40 of
-            the set-aside moves into PowerTies savings. In a month with no referred sales, nothing is owed and nothing
-            moves.
-          </p>
-        </div>
-        <div className="mt-4 overflow-x-auto rounded-xl border border-line bg-card">
-          <table className="w-full text-left text-sm sm:text-base">
-            <thead>
-              <tr className="border-b border-line bg-paper">
-                <th className="px-3 py-2 font-bold">Item</th>
-                <th className="px-3 py-2 font-bold">Price</th>
-                <th className="px-3 py-2 font-bold">You earn (10%)</th>
-                <th className="px-3 py-2 font-bold">Set aside (15%)</th>
-                <th className="px-3 py-2 font-bold">To savings (5%)</th>
-              </tr>
-            </thead>
-            <tbody>
-              {SPLITS.map(([item, price, earn, aside, save]) => (
-                <tr key={item} className="border-b border-line last:border-0">
-                  <td className="px-3 py-2">{item}</td>
-                  <td className="px-3 py-2">{price}</td>
-                  <td className="px-3 py-2 font-semibold">{earn}</td>
-                  <td className="px-3 py-2">{aside}</td>
-                  <td className="px-3 py-2">{save}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
         <p className="mt-3 text-muted">
           The honest math on the $10 minimum: one referred course sale earns $4.90, so two course sales clear the bar.
           A membership referral pays 30 cents a month, so memberships alone take a long while to reach $10. Smaller
