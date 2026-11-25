@@ -1,0 +1,9 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "functions": {
+    "api/signup.ts": { "maxDuration": 30 },
+    "api/magiclink.ts": { "maxDuration": 30 },
+    "api/dashboard.ts": { "maxDuration": 30 }
+  },
+  "rewrites": [{ "source": "/dashboard", "destination": "/index.html" }]
+}
