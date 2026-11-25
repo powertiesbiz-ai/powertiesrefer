@@ -4,7 +4,15 @@ export default {
   theme: {
     extend: {
       colors: {
-        gold: "#C6A15B",
+        paper: "#fafafa",
+        card: "#ffffff",
+        ink: "#121110",
+        muted: "#57534c",
+        line: "#dcdcdc",
+        red: "#b3222a",
+        redbright: "#d6343c",
+        crimson: "#7a0f14",
+        tint: "#f6e9e8",
       },
     },
   },

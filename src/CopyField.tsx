@@ -13,10 +13,10 @@ export default function CopyField({ label, value, big }: { label: string; value:
   }
   return (
     <div>
-      <div className="text-sm font-medium text-neutral-600">{label}</div>
+      <div className="text-sm font-medium text-muted">{label}</div>
       <div className="mt-1 flex items-stretch gap-2">
         <code
-          className={`flex-1 break-all rounded-lg border border-neutral-300 bg-white px-3 py-2 ${
+          className={`flex-1 break-all rounded-lg border border-line bg-card px-3 py-2 ${
             big ? "text-lg font-bold sm:text-xl" : "text-sm"
           }`}
         >
@@ -25,7 +25,7 @@ export default function CopyField({ label, value, big }: { label: string; value:
         <button
           type="button"
           onClick={copy}
-          className="shrink-0 rounded-lg bg-neutral-900 px-3 py-2 text-sm font-semibold text-white"
+          className="shrink-0 rounded-lg bg-ink px-3 py-2 text-sm font-semibold text-white"
         >
           {copied ? "Copied" : "Copy"}
         </button>

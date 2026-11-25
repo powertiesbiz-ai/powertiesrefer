@@ -56,7 +56,7 @@ const FAQ: Array<[string, string]> = [
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <section className="mt-10">
-      <h2 className="border-b-4 border-gold pb-2 text-2xl font-bold">{title}</h2>
+      <h2 className="border-b-4 border-red pb-2 text-2xl font-bold">{title}</h2>
       <div className="mt-4">{children}</div>
     </section>
   );
@@ -88,21 +88,21 @@ export default function Home() {
   return (
     <main className="mx-auto w-full max-w-3xl px-4 pb-16">
       <header className="pt-10">
-        <div className="text-sm font-bold uppercase tracking-wide text-neutral-500">PowerTies Consulting Group</div>
+        <div className="text-sm font-bold uppercase tracking-wide text-red">PowerTies Consulting Group</div>
         <h1 className="mt-1 text-4xl font-black">PowerTiesRefer</h1>
-        <p className="mt-3 text-lg text-neutral-700">
+        <p className="mt-3 text-lg text-muted">
           The PowerTies referral program. Recommend a PowerTies course, session, program, or membership to someone it
           would genuinely help, and earn 10% of what they actually buy.
         </p>
         {refCode && (
-          <p className="mt-4 rounded-lg border border-gold bg-white px-3 py-2 text-sm font-medium">
+          <p className="mt-4 rounded-lg border border-red/35 bg-tint px-3 py-2 text-sm font-medium">
             You were sent by a PowerTiesRefer member (code {refCode}).
           </p>
         )}
-        <div className="mt-5 rounded-xl bg-neutral-900 p-5 text-white">
+        <div className="mt-5 rounded-xl bg-crimson p-5 text-white">
           <p className="text-base font-semibold leading-relaxed">{HONESTY}</p>
         </div>
-        <p className="mt-4 text-neutral-700">
+        <p className="mt-4 text-muted">
           Where does the money come from? PowerTies sets aside 15% of every referred sale. Your 10% commission is paid
           out of that set-aside, and what is left goes into PowerTies savings. If no sale happens, no money exists, and
           nothing is owed. The full math is on this page, in the open.
@@ -111,19 +111,19 @@ export default function Home() {
 
       <Section title="How it works">
         <ol className="space-y-4">
-          <li className="rounded-xl border border-neutral-300 bg-white p-4">
+          <li className="rounded-xl border border-line bg-card p-4">
             <div className="font-bold">1. Get your link and code</div>
-            <p className="mt-1 text-neutral-700">Sign up free below. Your link and code are yours for as long as the program runs.</p>
+            <p className="mt-1 text-muted">Sign up free below. Your link and code are yours for as long as the program runs.</p>
           </li>
-          <li className="rounded-xl border border-neutral-300 bg-white p-4">
+          <li className="rounded-xl border border-line bg-card p-4">
             <div className="font-bold">2. Share it with someone it would genuinely help</div>
-            <p className="mt-1 text-neutral-700">
+            <p className="mt-1 text-muted">
               Not a blast, not a list. One person you actually believe a course, a session, or the membership would help.
             </p>
           </li>
-          <li className="rounded-xl border border-neutral-300 bg-white p-4">
+          <li className="rounded-xl border border-line bg-card p-4">
             <div className="font-bold">3. Earn 10% of what they buy</div>
-            <p className="mt-1 text-neutral-700">
+            <p className="mt-1 text-muted">
               Payouts are sent by Cash App on the 1st of the month, once your balance reaches $10 and the 30-day
               vesting window has passed. Cash App payments normally arrive the same day they are sent. Your dashboard
               always shows where you stand.
@@ -133,10 +133,10 @@ export default function Home() {
       </Section>
 
       <Section title="What you can share, and what you earn">
-        <div className="overflow-x-auto rounded-xl border border-neutral-300 bg-white">
+        <div className="overflow-x-auto rounded-xl border border-line bg-card">
           <table className="w-full text-left text-sm sm:text-base">
             <thead>
-              <tr className="border-b border-neutral-300 bg-neutral-100">
+              <tr className="border-b border-line bg-paper">
                 <th className="px-3 py-2 font-bold">Item</th>
                 <th className="px-3 py-2 font-bold">Price</th>
                 <th className="px-3 py-2 font-bold">You earn</th>
@@ -144,7 +144,7 @@ export default function Home() {
             </thead>
             <tbody>
               {CATALOG.map(([item, price, earn]) => (
-                <tr key={item} className="border-b border-neutral-200 last:border-0">
+                <tr key={item} className="border-b border-line last:border-0">
                   <td className="px-3 py-2">{item}</td>
                   <td className="px-3 py-2">{price}</td>
                   <td className="px-3 py-2 font-semibold">{earn}</td>
@@ -153,32 +153,32 @@ export default function Home() {
             </tbody>
           </table>
         </div>
-        <p className="mt-3 text-neutral-700">
+        <p className="mt-3 text-muted">
           Recurring items pay on every payment while the membership stays active. A VetsAndMore membership referred
           once pays 30 cents for each month the member stays active.
         </p>
       </Section>
 
       <Section title="The money, explained">
-        <p className="text-neutral-700">
+        <p className="text-muted">
           On every referred sale, PowerTies sets aside 15% of the sale. Referrers are paid their 10% out of that
           set-aside. The other 5% moves into PowerTies savings on the same day payouts go out. Because the set-aside
           and the commissions are measured on the same sales, the set-aside always covers the payouts, with 5 points
           to spare.
         </p>
-        <div className="mt-4 rounded-xl border border-neutral-300 bg-white p-4">
+        <div className="mt-4 rounded-xl border border-line bg-card p-4">
           <div className="font-bold">A worked example month</div>
-          <p className="mt-1 text-neutral-700">
+          <p className="mt-1 text-muted">
             Say total sales for the month are $2,000, and $800 of that came through referral links. The set-aside is
             15% of the referred sales: $120. Referrers are paid 10% of the referred sales: $80. The remaining $40 of
             the set-aside moves into PowerTies savings. In a month with no referred sales, nothing is owed and nothing
             moves.
           </p>
         </div>
-        <div className="mt-4 overflow-x-auto rounded-xl border border-neutral-300 bg-white">
+        <div className="mt-4 overflow-x-auto rounded-xl border border-line bg-card">
           <table className="w-full text-left text-sm sm:text-base">
             <thead>
-              <tr className="border-b border-neutral-300 bg-neutral-100">
+              <tr className="border-b border-line bg-paper">
                 <th className="px-3 py-2 font-bold">Item</th>
                 <th className="px-3 py-2 font-bold">Price</th>
                 <th className="px-3 py-2 font-bold">You earn (10%)</th>
@@ -188,7 +188,7 @@ export default function Home() {
             </thead>
             <tbody>
               {SPLITS.map(([item, price, earn, aside, save]) => (
-                <tr key={item} className="border-b border-neutral-200 last:border-0">
+                <tr key={item} className="border-b border-line last:border-0">
                   <td className="px-3 py-2">{item}</td>
                   <td className="px-3 py-2">{price}</td>
                   <td className="px-3 py-2 font-semibold">{earn}</td>
@@ -199,7 +199,7 @@ export default function Home() {
             </tbody>
           </table>
         </div>
-        <p className="mt-3 text-neutral-700">
+        <p className="mt-3 text-muted">
           The honest math on the $10 minimum: one referred course sale earns $4.90, so two course sales clear the bar.
           A membership referral pays 30 cents a month, so memberships alone take a long while to reach $10. Smaller
           balances roll forward, month to month, until they reach $10.
@@ -207,13 +207,13 @@ export default function Home() {
       </Section>
 
       <Section title="The rules, in plain words">
-        <ul className="list-disc space-y-3 pl-5 text-neutral-800">
+        <ul className="list-disc space-y-3 pl-5 text-ink">
           {RULES.map((rule) => (
             <li key={rule.slice(0, 32)}>{rule}</li>
           ))}
         </ul>
         <p className="mt-4">
-          <a className="font-semibold text-neutral-900 underline" href="/PowerTiesRefer-Rules.pdf" download>
+          <a className="font-semibold text-ink underline hover:text-red" href="/PowerTiesRefer-Rules.pdf" download>
             Download the full rules (PDF)
           </a>
         </p>
@@ -226,25 +226,25 @@ export default function Home() {
       <Section title="Questions people ask">
         <div className="space-y-4">
           {FAQ.map(([q, a]) => (
-            <div key={q} className="rounded-xl border border-neutral-300 bg-white p-4">
+            <div key={q} className="rounded-xl border border-line bg-card p-4">
               <div className="font-bold">{q}</div>
-              <p className="mt-1 text-neutral-700">{a}</p>
+              <p className="mt-1 text-muted">{a}</p>
             </div>
           ))}
         </div>
       </Section>
 
       <Section title="Already a member?">
-        <p className="text-neutral-700">
+        <p className="text-muted">
           Your dashboard shows your link, your code, your clicks, your sales, and exactly where your money stands.{" "}
-          <a className="font-semibold text-neutral-900 underline" href="/dashboard">
+          <a className="font-semibold text-ink underline hover:text-red" href="/dashboard">
             Go to your dashboard
           </a>{" "}
           and we will email you a fresh link to it.
         </p>
       </Section>
 
-      <footer className="mt-12 border-t border-neutral-300 pt-4 text-sm text-neutral-500">
+      <footer className="mt-12 border-t border-line pt-4 text-sm text-muted">
         PowerTiesRefer is the referral program of PowerTies Consulting Group. One tier only. Recruiting earns nothing.
       </footer>
     </main>
